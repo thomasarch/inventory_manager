@@ -1,0 +1,49 @@
+{
+	"main" : {
+		"heading" : [
+			"Welcome to Tom-mart!",
+			"",
+			"Make your choice:",
+			"-----------------"
+		],
+
+		"options" : [
+			["View All Products", "view_all", "screen"],
+			["View By Category", "view_category", "screen"],
+			["Lookup Item By Serial Number", "get_serial", "screen"],
+			["Check Soon to Expire", "view_expiry", "screen"]
+		]
+	},
+
+	"view_all" : {
+		"heading" : [
+			"All Items:"
+		],
+
+		"options" : [
+			["Select Item by serial number", "fetch_serial", "input"],
+			["Go Back", "main", "screen"]
+		]
+	},
+
+	"fetch_serial" : {
+		"heading" : [],
+		"options" : []
+	},
+
+  "show_item" : {
+    "heading" : [
+    	"Single Item View",
+    	"-----------------"
+    ],
+    "options" : [
+      ["Add Quantity", "add_qty", "object"],
+      ["Change Price", ""],
+      ["Put Item on Sale", ""],
+      ["Show total cost", ""],
+      ["Show potential Revenue", ""],
+      ["Show potential Profit", ""],
+      ["go back", "main"]
+    ]
+  }
+}

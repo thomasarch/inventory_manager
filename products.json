@@ -1,0 +1,108 @@
+{
+	"products" : [[
+		"Pizza Rolls",
+		36,
+		345675,
+		399,
+		499,
+		"Frozen Foods"
+	], [
+		"Red Baron Pizza",		
+		24,
+		345656,
+		299,
+		399,
+		"Frozen Foods"
+	], [
+        "Chocolate Ice Cream",
+		12,
+		345464,
+		300,
+		499,
+		"Frozen Foods"
+	], [
+        "French Fries",
+        12,
+        345432,
+        345,
+        445,
+        "Frozen Foods"
+	], [
+        "Veggie Burger",
+		36,
+		354657,
+		350,
+		499,
+		"Frozen Foods"
+	], [
+       	"Miller Lite 12pk",
+		12,
+		556743,
+		700,
+		999,
+		"Beer/Wine"
+    ], [
+    	"Black Box Cabernet",
+		12,
+		556789,
+		1200,
+		2000,
+		"Beer/Wine"
+    ], [
+        "Bells Two-Hearted Ale 12pk",
+        6,
+        567983,
+        1300,
+        1995,
+        "Beer/Wine"
+    ], [
+    	"Samuel Addams Winter Ale 12pk",
+		12,
+		593821,
+		1300,
+		1995,
+		"Beer/Wine"
+    ], [
+    	"New Belguim Fat Tire 12pk",
+		12,
+		592031,
+		1300,
+		1995,
+		"Beer/Wine"
+    ], [
+    	"Chicken Breast",
+		36,
+		234543,
+		300,
+		499,
+		"Meat"
+    ], [
+    	"Ground Beef 1lb",
+		24,
+		239185,
+		255,
+		455,
+		"Meat"
+    ], [
+    	"Spicy Sausage",
+		24,
+		237684,
+		350,
+		499,
+		"Meat"
+    ], [
+    	"Pork Chops",
+		12,
+		234343,
+		375,
+		550,
+		"Meat"
+    ], [
+    	"New York Strip 16oz",
+		12,
+		1,
+		800,
+		1299,
+		"Meat"
+    ]]
+}
