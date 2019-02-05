@@ -1,7 +1,17 @@
+require 'json'
+
 # handles drawing various views
 class Viewer
   def format_money(num)
     format('$%.2f', (num * 0.01))
+  end
+
+  def show_sale(product)
+    if product.sale == 1
+      'not on sale'
+    else
+      "#{(product.sale * 100).to_i}\% off .. Sale Price: #{format_money(product.sale_price)}" 
+    end
   end
 
   def format_product(item)
@@ -10,7 +20,7 @@ class Viewer
     puts "          Cost: #{format_money(item.cost)}"
     puts "          RegPrice: #{format_money(item.price)}"
     puts "          Expires: #{item.expiry.strftime('%m/%d/%y')}"
-    # puts "          #{show_sale(item)}"
+    puts "          #{show_sale(item)}"
     puts
   end
 
@@ -31,6 +41,10 @@ class Viewer
   end
 
   def draw_screen(params)
-    params.each { |item| draw_section(item) }
+    system 'clear'
+    menu = params['menu']
+    draw_section(['heading', menu['heading']])
+    draw_section(['data', params['data']])
+    draw_section(['options', menu['options']])
   end
 end
