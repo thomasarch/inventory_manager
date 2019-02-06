@@ -55,7 +55,7 @@
 			"menu", "choose an option: ", "invalid input. try again"
 		]
 	},
-
+	
 	"add_qty" : {
 		"input" : [
 			"integer", "how many to add? ", "please enter a number greater than 0"
