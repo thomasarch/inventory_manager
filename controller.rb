@@ -28,59 +28,43 @@ class Controller
     choice = @validate.input(params)
     action = params['menu']['options'][choice][1]
     params['action'] = action
-    router(params)
   end
 
   def view_all(params)
     params['data'] = @product_list
     viewer(params)
+    router(params)
   end
 
   def show_category(params)
     viewer(params)
+    router(params)
   end
 
   def show_product(params)
     viewer(params)
+    unless params['action'] == 'main'
+      params['object_method'] = params['action']
+      params['action'] = 'call_method_on_product'
+    end
+    router(params)
   end
 
   # call method on product
-  def call_method_on_product(params, input = nil)
-    if input.nil?
-      params['data'][0].public_send(params['action'])
+  def call_method_on_product(params)
+    object_method = params['object_method']
+    params['menu'] = params['menu'][object_method]
+    params['action'] = object_method
+    if params['menu'].nil?
+      params['data'][0].public_send(params['object_method'])
     else
       @view.draw_screen(params)
       choice = @validate.input(params)
-      params['data'][0].public_send(params['action'], choice)
+      params['data'][0].public_send(params['object_method'], choice)
     end
     params['action'] = 'show_product'
     router(params)
   end
-
-  def show_total_cost(params)
-    call_method_on_product(params)
-  end
-
-  def show_potential_revenue(params)
-    call_method_on_product(params)
-  end
-
-  def show_potential_profit(params)
-    call_method_on_product(params)
-  end
-
-  def add_qty(params)
-    call_method_on_product(params, 'yes')
-  end
-
-  def change_price(params)
-    call_method_on_product(params, 'yes')
-  end
-
-  def put_on_sale(params)
-    call_method_on_product(params, 'yes')
-  end
-  # end call method on product
 
   def choose_category(params)
     params['menu']['options'] = @categories

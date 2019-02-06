@@ -56,22 +56,24 @@
 		]
 	},
 	
-	"add_qty" : {
-		"input" : [
-			"integer", "how many to add? ", "please enter a number greater than 0"
-		]
-	},
+	"call_method_on_product" : {
+		"add_qty" : {
+			"input" : [
+				"integer", "how many to add? ", "please enter a number greater than 0"
+			]
+		},
 
-	"change_price" : {
-		"input" : [
-			"integer", "enter new price (enter in cents - e.g. 500 = $5.00): ", "please enter a number greater than 0"
-		]
-	},
+		"change_price" : {
+			"input" : [
+				"integer", "enter new price (enter in cents - e.g. 500 = $5.00): ", "please enter a number greater than 0"
+			]
+		},
 
-	"put_on_sale" : {
-		"input" : [
-			"integer", "how much to discount? (e.g. 5 = 5% off. enter 1 to return to regular price)", "please enter a number greater than 0"
-		]
+		"put_on_sale" : {
+			"input" : [
+				"integer", "how much to discount? (e.g. 5 = 5% off. enter 1 to return to regular price)", "please enter a number greater than 0"
+			]
+		}
 	},
 
 	"choose_category" : {
