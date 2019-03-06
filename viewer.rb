@@ -10,7 +10,7 @@ class Viewer
     if product.sale == 1
       'not on sale'
     else
-      "#{(product.sale * 100).to_i}\% off .. Sale Price: #{format_money(product.sale_price)}" 
+      "#{(product.sale * 100).to_i}\% off .. Sale Price: #{format_money(product.sale_price)}"
     end
   end
 
