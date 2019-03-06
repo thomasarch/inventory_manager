@@ -11,7 +11,8 @@
 			["View All Products", "view_all"],
 			["View By Category", "choose_category"],
 			["Select Item by serial number", "lookup_product"],
-			["Check Soon to Expire", "choose_expiry"]
+			["Check Soon to Expire", "choose_expiry"],
+			["Create New Product","create_new_product"]
 		],
 		"input" : [
 			"menu", "choose an option: ", "invalid input. try again"
@@ -105,6 +106,12 @@
 	"choose_expiry" : {
 		"input" : [
 			"integer", "how many days? ", "please enter a number greater than 0"
+		]
+	},
+
+	"create_new_product" : {
+		"input" : [
+			"new", "Name: ", ["Quantity: ", "Serial Number: ", "Cost: ", "Price: "]
 		]
 	}
 }

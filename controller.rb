@@ -104,6 +104,15 @@ class Controller
     router(params)
   end
 
+  def create_new_product(params)
+    product_attributes = @validate.input(params)
+    new_product = Product.new(product_attributes)
+    @product_list.push(new_product)
+    params['data'] = [new_product]
+    params['action'] = 'show_product'
+    router(params)
+  end
+
   def main(params)
     params['data'] = nil
     @view.draw_screen(params)

@@ -17,6 +17,18 @@ class Validator
     end
   end
 
+  def new(params, choice)
+    product_attributes = [choice]
+    params['menu']['input'][2].each do |attribute|
+      print attribute
+      user_input = gets.chomp.to_i
+      product_attributes.push(user_input)
+    end
+    product_attributes[3] *= 0.01
+    product_attributes[4] *= 0.01
+    product_attributes
+  end
+
   def item_lookup(params, choice)
     choice = choice.to_i
     product = params['data'].find { |item| item.serial_number == choice }
