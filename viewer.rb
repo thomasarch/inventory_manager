@@ -10,16 +10,16 @@ class Viewer
     if product.sale == 1
       'not on sale'
     else
-      "#{(product.sale * 100).to_i}\% off .. Sale Price: #{format_money(product.sale_price)}"
+      "#{product.show_sale} off .. Sale Price: #{product.sale_price}"
     end
   end
 
   def format_product(item)
     puts item.category.to_s
     puts "(##{item.serial_number}) #{item.name} - Qty: #{item.quantity}"
-    puts "          Cost: #{format_money(item.cost)}"
-    puts "          RegPrice: #{format_money(item.price)}"
-    puts "          Expires: #{item.expiry.strftime('%m/%d/%y')}"
+    puts "          Cost: #{item.cost}"
+    puts "          RegPrice: #{item.price}"
+    puts "          Expires: #{item.expiry}"
     puts "          #{show_sale(item)}"
     puts
   end
@@ -37,7 +37,7 @@ class Viewer
   end
 
   def draw_section(section)
-    section[1].nil? ? '' : public_send(section[0], section[1])
+    section[1].nil? ? '' : send(section[0], section[1])
   end
 
   def draw_screen(params)

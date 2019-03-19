@@ -15,8 +15,8 @@ class Product
     @sale = 1
   end
 
-  attr_accessor :price, :sale
-  attr_reader :name, :quantity, :serial_number, :cost, :category, :expiry, :sale_price
+  attr_accessor :sale
+  attr_reader :name, :quantity, :serial_number, :category
 
   def format_money(num)
     format('$%.2f', (num * 0.01))
@@ -42,6 +42,22 @@ class Product
     gets
   end
 
+  def price
+    format_money(@price)
+  end
+
+  def cost
+    format_money(@cost)
+  end
+
+  def sale_price
+    format_money(@sale_price)
+  end
+
+  def expiry
+    @expiry.strftime('%m/%d/%y')
+  end
+
   def show_total_cost
     show_info("#{@name} total cost: #{format_money(@quantity * @cost)}")
   end
@@ -52,5 +68,9 @@ class Product
 
   def show_potential_profit
     show_info("#{@name} potential profit: #{format_money((@quantity * @sale_price) - (@quantity * @cost))}")
+  end
+
+  def show_sale
+    "#{(@sale * 100).to_i}\%"
   end
 end

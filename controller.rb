@@ -11,7 +11,6 @@ class Controller
     @product_list = parsed_products['products'].map { |item| Product.new(item) }
     @categories = @product_list.collect(&:category).uniq
     @categories.map! { |c| [c, c] }
-    @data = nil
   end
 
   def initialize
@@ -19,6 +18,7 @@ class Controller
     @validate = Validator.new
     import_products
     @menu_list = JSON.parse(File.read('menus.json'))
+    @data = nil
   end
 
   # action methods
@@ -56,11 +56,11 @@ class Controller
     params['menu'] = params['menu'][object_method]
     params['action'] = object_method
     if params['menu'].nil?
-      params['data'][0].public_send(params['object_method'])
+      params['data'][0].send(params['object_method'])
     else
       @view.draw_screen(params)
       choice = @validate.input(params)
-      params['data'][0].public_send(params['object_method'], choice)
+      params['data'][0].send(params['object_method'], choice)
     end
     params['action'] = 'show_product'
     router(params)
@@ -125,6 +125,6 @@ class Controller
   def router(params)
     action = params['action']
     params['menu'] = @menu_list[action]
-    public_send(action, params)
+    send(action, params)
   end
 end

@@ -4,7 +4,7 @@ class Validator
     input = params['menu']['input']
     print params['menu']['input'][1]
     choice = gets.chomp
-    choice == 'back' ? 'back' : public_send(input[0], params, choice)
+    choice == 'back' ? 'back' : send(input[0], params, choice)
   end
 
   def menu(params, choice)
